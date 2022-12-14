@@ -1,9 +1,16 @@
 h1 {
   margin: 0;
 }
-body {
+body,
+.App,
+#root {
   min-height: 100vh;
   margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -28,6 +35,7 @@ body {
   width: 100%;
   background-color: black;
   color: azure;
+  margin-top: auto;
 }
 
 .footer a {
@@ -45,17 +53,48 @@ body {
   align-items: center;
 }
 
-.previewBtn,
-.workingBtn {
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+.emptyDiv {
+  border: 0.11px gray solid;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.exampleDiv {
+  width: max-content;
+}
+
+.buttonContainer button {
   padding: 0.5rem 1rem;
   font-weight: bold;
 }
+.buttonContainer span {
+  margin: 0 0.5rem;
+}
 
 .previewBtn {
+  border: 2px black solid;
   border-right: 0;
 }
 
 .workingBtn {
+  border: 2px black solid;
+  border-left: 0;
+}
+
+.exampleBtn {
+  border: 2px black solid;
+  border-right: 0;
+}
+
+.previewMiddle {
   border-left: 0;
 }
 
@@ -65,21 +104,36 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem 0;
 }
 
 .card {
   display: flex;
   flex-direction: row;
   margin-top: 1.5rem;
+  justify-content: center;
 }
 
 .travelInfo {
   display: flex;
   flex-direction: column;
   margin-left: 1.5rem;
+  width: 60%;
 }
 
 .imgDiv img {
+  width: 125px;
+  height: 168px;
+  border-radius: 6px;
+}
+
+.card input[type="file"] {
+  height: 100%;
+}
+
+.card .inputFileBackground {
+  display: flex;
+  flex-direction: column;
   width: 125px;
   height: 168px;
   border-radius: 6px;
@@ -117,7 +171,6 @@ body {
 }
 
 #desc {
-  width: 80%;
   margin-top: 0.5rem;
   font-family: "Inter";
   font-style: normal;
@@ -126,6 +179,7 @@ body {
   /* or 15px */
   font-size: 0.9rem;
   color: #2b283a;
+  margin-right: 1rem;
 }
 
 .addForm {
@@ -142,8 +196,21 @@ body {
 }
 
 .addForm input {
-  font-size: large;
+  font-size: 15px;
   padding: 0.5rem;
+  border-radius: 6px;
+  border: 0.1px gray solid;
+  margin-top: 0.5rem;
+}
+
+.addForm input:focus {
+  border: 0.1px turquoise solid;
+  outline: 2px cornflowerblue solid;
+  transform: scale(1.02);
+}
+
+label {
+  width: max-content;
 }
 
 .row {
@@ -159,4 +226,40 @@ body {
 .startDiv,
 .endDiv {
   width: 100%;
+}
+
+.buttonDiv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+}
+.buttonDiv button {
+  width: 100%;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: rgb(193, 239, 255);
+  padding: 0.5rem 0.5rem;
+  border: 0.1px gray solid;
+}
+
+.addBtn:active {
+  box-shadow: cornflowerblue 0px 2px 4px;
+}
+
+.clearBtn:active {
+  box-shadow: darkred 0px 2px 4px;
+}
+
+button:hover,
+label:hover {
+  cursor: pointer;
+}
+
+#active {
+  background-color: rgb(193, 239, 255);
+}
+
+.displayNone {
+  display: none;
 }
