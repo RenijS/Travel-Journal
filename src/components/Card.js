@@ -5,9 +5,17 @@ import { faLocation } from "@fortawesome/free-solid-svg-icons";
 export default function card(props) {
   return (
     <div className="card">
-      <div className="imgDiv">
-        <img src={`./images/${props.imgName}.png`} alt="" />
-      </div>
+      {props.imgName === undefined && (
+        <div className="inputFileBackground">
+          <h1>Add Image</h1>
+          <input type="file" id="file" accept=".jpg, .jpeg, .png" />
+        </div>
+      )}
+      {props.imgName !== undefined && (
+        <div className="imgDiv">
+          <img src={`./images/${props.imgName}.png`} alt="" />
+        </div>
+      )}
       <div className="travelInfo">
         <div className="location">
           <FontAwesomeIcon icon={faLocation} />

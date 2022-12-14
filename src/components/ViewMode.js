@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import AddMode from "./AddMode";
+import Empty from "./Empty";
 
 export default function viewMode(props) {
   const exampleArr = [
@@ -46,11 +47,22 @@ export default function viewMode(props) {
 
   return (
     <div className="cardContainer">
-      {props.viewMode &&
+      {!props.example &&
+        props.viewMode &&
+        props.addedArr.length > 0 &&
+        props.addedArr.map((data) => {
+          return <Card {...data} />;
+        })}
+      {!props.example && props.viewMode && props.addedArr.length === 0 && (
+        <Empty />
+      )}
+      {props.example &&
         exampleArr.map((data) => {
           return <Card {...data} />;
         })}
-      {!props.viewMode && <AddMode />}
+      {!props.example && !props.viewMode && (
+        <AddMode addJournal={props.addJournal} />
+      )}
     </div>
   );
 }
