@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import ViewMode from "./ViewMode";
 
 export default function Main() {
-  const [viewMode, setMode] = useState(false);
-  const [example, setExample] = useState(false);
+  const [viewMode, setMode] = useState(true);
+  const [example, setExample] = useState(true);
   const [addedArr, setArr] = useState([]);
 
   const viewClicked = (e) => {
