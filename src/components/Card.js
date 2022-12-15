@@ -6,9 +6,8 @@ export default function card(props) {
   return (
     <div className="card">
       {props.imgName === undefined && (
-        <div className="inputFileBackground">
-          <h1>Add Image</h1>
-          <input type="file" id="file" accept=".jpg, .jpeg, .png" />
+        <div className="imgDiv">
+          <img src={`./images/soon.png`} alt="" />
         </div>
       )}
       {props.imgName !== undefined && (
