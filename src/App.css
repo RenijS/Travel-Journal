@@ -125,6 +125,7 @@ body,
   width: 125px;
   height: 168px;
   border-radius: 6px;
+  object-fit: cover;
 }
 
 .card input[type="file"] {
